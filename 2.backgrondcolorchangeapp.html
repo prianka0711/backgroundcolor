@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background color change app</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            height: 300px;
+            width: 350px;
+            background-color: aquamarine;
+        }
+        
+        .btn {
+            height: 25px;
+            width: 100px;
+            border-radius: 25px;
+            background-color: green;
+            color: white;
+        }
+        
+        .a1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+        </div>
+    </div>
+    <div class="a1">
+        <button class="btn">clickme!</button>
+    </div>
+
+
+    <script>
+        let colors = ['red', 'blue', 'green', 'orange', 'purple', 'black', 'yellow'];
+        let colorslength = colors.length;
+        console.log(colorslength);
+
+        let button = document.querySelector('.btn');
+
+        console.log(button);
+
+        button.addEventListener('click', function() {
+            let randomColor = colors[Math.floor(Math.random() * colors.length)];
+            let container = document.querySelector('.container');
+            container.style.background = randomColor;
+
+            console.log(container);
+        });
+    </script>
+
+
+</body>
+
+</html>
